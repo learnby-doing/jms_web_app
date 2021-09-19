@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/40655f7eee.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>New Admission</title>
+  </head>
+  <body>
+    <div class="container-current-page">
+      <header class="header">
+        <ul class="header-content">
+          <li>
+            <a href=""><span class="logo">JMS</span></a>
+          </li>
+          <ul class="header-page-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Students</a></li>
+            <li><a href="">Teachers</a></li>
+            <li><a href="">Contacts</a></li>
+            <li><a href="">About</a></li>
+          </ul>
+          <ul class="contact-content">
+            <li>
+              <i class="fas fa-phone-square primary-color"></i
+              ><a class="style-link" href="">Contact Us</a>
+            </li>
+            <li>
+              <i class="fas fa-envelope-square primary-color"></i
+              ><a href="" class="style-link">Email</a>
+            </li>
+          </ul>
+        </ul>
+      </header>
+      <form action="">
+        <div class="student-form-container">
+          <!-- <hr class="primary-txt-color" bg-dark /> -->
+          <h2>Student Form</h2>
+          <div class="profile-photo bg-light">
+            <p>
+              <input
+                type="file"
+                accept="image/*"
+                name="image"
+                id="file"
+                onchange="loadFile(event)"
+                style="display: none"
+              />
+            </p>
+            <p>
+              <label for="file" style="cursor: pointer" class="primary-color"
+                >Upload Image</label
+              >
+            </p>
+            <p><img id="output" height="170" /></p>
+          </div>
+          <div class="student-form">
+            <div>
+              <label for="first_name">First Name: </label
+              ><input type="text" id="first_name" placeholder="First Name" />
+            </div>
+            <div>
+              <label for="last_name">Last Name: </label
+              ><input type="text" id="last_name" placeholder="Last Name" />
+            </div>
+            <div>
+              <label for="dob">Date of Birth: </label
+              ><input type="date" id="dob" placeholder="Date of Birth" />
+            </div>
+            <div>
+              <label for="Category">Gender: </label>
+              <!-- <input type="text" id="Category" placeholder="Category" /> -->
+              <select id="category" name="category">
+                <option value="volvo">Male</option>
+                <option value="saab">Female</option>
+                <option value="opel">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="Category">Category: </label>
+              <!-- <input type="text" id="Category" placeholder="Category" /> -->
+              <select id="category" name="category">
+                <option value="volvo">General</option>
+                <option value="saab">OBC</option>
+                <option value="opel">ST</option>
+                <option value="audi">SC</option>
+              </select>
+            </div>
+            <div>
+              <label for="father_name">Father's Name: </label
+              ><input
+                type="text"
+                id="father_name"
+                placeholder="Father's Name"
+              />
+            </div>
+            <div>
+              <label for="mother_name">Mother's Name: </label
+              ><input
+                type="text"
+                id="mother_name"
+                placeholder="Mother's Name"
+              />
+            </div>
+            <div>
+              <label for="contact">Contact: </label
+              ><input type="text" id="contact" placeholder="Contact" />
+            </div>
+            <div>
+              <label for="Category">Class: </label>
+              <!-- <input type="text" id="Category" placeholder="Category" /> -->
+              <select id="class" name="class">
+                <option value="volvo">1st</option>
+                <option value="saab">2nd</option>
+                <option value="opel">3rd</option>
+                <option value="audi">4th</option>
+              </select>
+            </div>
+            <div>
+              <label for="village">Village: </label
+              ><input type="text" id="village" placeholder="Village" />
+            </div>
+            <div>
+              <label for="address">Address: </label
+              ><textarea
+                type="text"
+                id="address"
+                placeholder="Address"
+              ></textarea>
+            </div>
+          </div>
+          <div>
+            <div>
+              <button class="btn" type="submit" id="submit">
+                Submit <i class="fas fa-arrow-circle-right"></i>
+              </button>
+              <p class="submit__status primary-txt-color">
+                <!-- Uploading Details.... -->
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overlay"></div>
+        <div class="popup">
+          <div class="close-btn">&times;</div>
+          <h3>Fee Payment</h3>
+          <div class="student__type">
+            <div class="align-itms">
+              <label for="regular">Regular</label>
+              <!-- <input type="radio" name="regular" id="" /> -->
+            </div>
+            <div>
+              <label for="rte">RTE</label>
+              <!-- <input type="radio" name="rte" id="" /> -->
+            </div>
+          </div>
+          <div class="pymt-window">
+            <div>
+              <label for="fee_pymt">Deposit Fee:</label>
+              <input type="text" name="" id="fee_pymt" />
+            </div>
+            <div>
+              <label for="fee_pymt">Paid By:</label>
+              <input type="text" name="" id="fee_pymt" />
+            </div>
+            <div>
+              <p>Total Fee: <span>12000</span></p>
+            </div>
+          </div>
+          <div>
+            <button class="btn">
+              Pay Fee <i class="fas fa-arrow-circle-right"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      var loadFile = function (event) {
+        var image = document.getElementById("output");
+        image.src = URL.createObjectURL(event.target.files[0]);
+      };
+      const submitBtn = document.getElementById("submit");
+      const submitStatus = document.querySelector(".submit__status");
+      submitBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log("Button Clicked!");
+        submitStatus.style.display = "block";
+      });
+
+      const closeBtn = document.querySelector(".close-btn");
+      const popup = document.querySelector(".popup");
+      const overlay = document.querySelector(".overlay");
+
+      closeBtn.addEventListener("click", function () {
+        popup.style.opacity = "0";
+        popup.style.zIndex = "-1";
+
+        overlay.style.opacity = "0";
+        overlay.style.zIndex = "-1";
+      });
+
+      const submit = document.getElementById("submit");
+
+      submit.addEventListener("click", function () {
+        popup.style.opacity = "1";
+        popup.style.zIndex = "50";
+
+        overlay.style.opacity = "0.6";
+        overlay.style.zIndex = "10";
+      });
+    </script>
+  </body>
+</html>
