@@ -23,6 +23,7 @@ img {
 body {
   font-family: var(--font-family);
   background: var(--light-color);
+  padding-bottom: 30px;
   /* padding: 30px 20px; */
 }
 li {
@@ -42,6 +43,12 @@ li a {
 .primary-color {
   color: var(--primary-color);
   /* color: var(--dark-color); */
+}
+
+.err {
+  background: white !important;
+  color: red !important;
+  border: red 1px solid;
 }
 
 .primary-txt-color {
@@ -66,6 +73,10 @@ li a {
 .style-link {
   font-size: 20px;
   color: var(--primary-color);
+}
+
+select option:hover {
+  background: green;
 }
 
 .header-content {
@@ -346,12 +357,15 @@ option:focus {
 
   margin: 0;
 }
-.popup > .student__type > div > label {
+
+#student_type_regular,
+#student_type_RTE {
   color: var(--grey-color);
-  background: transparent;
-  /* margin: 10px; */
+  background: var(--dark-color);
+  margin: 10px;
   padding: 2px;
   border: 1px solid var(--primary-color);
+  cursor: pointer;
 }
 .popup > .student__type > div > input[type="radio"] {
   /* margin: 5px 0px; */
@@ -362,7 +376,7 @@ option:focus {
   color: var(--primary-color);
 }
 
-.popup > div > div > label {
+.popup div div label {
   font-family: var(--font-family);
   background: var(--primary-color);
   color: var(--grey-color);
@@ -394,7 +408,7 @@ option:focus {
   font-family: var(--font-family);
   background: var(--primary-color);
   width: auto;
-  color: var(--dark-color);
+  color: var(--grey-color);
   display: inline-block;
   font-weight: bold;
   padding: 5px;
@@ -415,4 +429,40 @@ option:focus {
   /* transform: translate(0%, -15%); */
   cursor: pointer;
   opacity: 0.7;
+}
+.pymt-window-msg {
+  opacity: 0;
+}
+
+.msg {
+  /* box-shadow: var(--box-shadow); */
+  animation: msgdisplay 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes msgdisplay {
+  0% {
+    font-size: 0px;
+  }
+  50% {
+    font-size: 20px;
+  }
+  100% {
+    font-size: 18px;
+  }
+}
+
+.fa-spinner {
+  animation-name: spinner;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
