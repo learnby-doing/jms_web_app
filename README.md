@@ -1,3 +1,3 @@
-# jms_web_app
+# Cube Academy
 
 Web Application for JMS (Google App script)

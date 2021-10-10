@@ -16,6 +16,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  /* overflow: scroll; */
 }
 
 img {
@@ -328,21 +329,21 @@ option:focus {
   opacity: 0.6;
   height: 100%;
   width: 100%;
-  z-index: 10;
   backdrop-filter: blur(2px);
   top: 0;
   left: 0;
+  opacity: 0;
+  z-index: -10;
 }
 
 .popup {
   position: fixed;
   top: 20%;
-
   left: 20%;
   height: 350px;
   width: 500px;
   background: var(--dark-color);
-  z-index: 100;
+  z-index: -10;
   border-radius: 5px;
   color: var(--primary-color);
   /* padding: 25px 5px; */
@@ -352,6 +353,7 @@ option:focus {
   justify-content: center;
   align-items: center;
   box-shadow: var(--box-shadow);
+  opacity: 0;
 }
 
 .popup .student__type {
@@ -524,10 +526,23 @@ option:focus {
   width: 250px;
   border-radius: 5px;
   padding: 10px;
-  margin: 0 20px;
+  margin: 20px 20px;
   background: var(--dark-color);
   height: auto;
   box-shadow: var(--box-shadow);
+  animation: student_info_display 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes student_info_display {
+  from {
+    opacity: 0.5;
+    /* height: 0; */
+  }
+  to {
+    opacity: 1;
+    /* height: auto; */
+  }
 }
 
 .done {
