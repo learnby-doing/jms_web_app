@@ -6,6 +6,8 @@
   --dark-color: #333;
   --light-color: #444;
   --grey-color: #ddd;
+  --pending-color: #d4ac0d;
+  --rte-color: #2980b9;
   --font-family: "Glory", sans-serif;
   --box-shadow: #222 0px 8px 24px;
 }
@@ -18,6 +20,7 @@
 
 img {
   border-radius: 5px;
+  height: 50px;
 }
 
 body {
@@ -81,26 +84,27 @@ select option:hover {
 
 .header-content {
   display: grid;
-  grid-template-columns: 2fr 6fr 2fr 2fr;
+  grid-template-columns: 2fr 4fr 6fr;
   /* margin: 10px; */
   background: var(--light-color);
-  padding: 20px 0px;
+  padding: 5px 0px;
   box-shadow: 2px 0px 5px var(--dark-color);
 }
 
 .logo {
   color: var(--primary-color);
-  font-weight: bold;
+  height: 50px !important;
   /* background: var(--dark-color); */
-  padding: 5px;
   border-radius: 5px;
+  padding-left: 20px;
 }
 
 .header-page-items,
 .contact-content {
+  padding: 0px 20px;
   display: flex;
-  position: relative;
-  /* justify-self: center; */
+  align-items: center;
+  justify-content: center;
 }
 .contact-content {
   justify-self: end;
@@ -109,7 +113,7 @@ select option:hover {
   color: var(--primary-color);
   padding: 5px;
   border-radius: 5px;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .header-page-items a:hover {
@@ -137,13 +141,13 @@ select option:hover {
 
 .shocase-content::before {
   content: "";
-  background: url("./shocase.jpg") no-repeat center center/cover;
+  background: url("./logo/cube.png") no-repeat center center/cover;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.4;
+  opacity: 1;
   z-index: 0;
 }
 
@@ -465,4 +469,103 @@ option:focus {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* students.html */
+.classes-list li {
+  display: flex;
+  /* padding: 20px; */
+  /* flex-wrap: wrap; */
+}
+
+.students-content {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: row; */
+}
+
+.students__container {
+  padding: 30px;
+}
+.students__container .search label {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-weight: bolder;
+}
+.students__container .search input {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  font-family: var(--font-family);
+  font-size: 15px;
+  color: var(--dark-color);
+  font-weight: bolder;
+}
+.classes-list li ul {
+  border-radius: 5px;
+  background: var(--dark-color);
+  color: var(--grey-color);
+  border: 1px solid var(--dark-color);
+  margin: 20px 20px 20px 0px;
+  text-align: center;
+  width: 100px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.classes-list li .current {
+  background: var(--primary-color);
+  border: none;
+}
+
+.student-info {
+  text-align: center;
+  width: 250px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 20px;
+  background: var(--dark-color);
+  height: auto;
+  box-shadow: var(--box-shadow);
+}
+
+.done {
+  border-top: 5px solid var(--primary-color);
+}
+
+.pending {
+  border-top: 5px solid var(--pending-color);
+}
+
+.rte {
+  border-top: 5px solid var(--rte-color);
+}
+
+/* .student-info img {
+  height: 70%;
+} */
+
+/* .mask {
+  position: relative;
+} */
+
+.mask img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+}
+.student__info__details {
+  margin: 10px 0px;
+}
+.student__info__details p {
+  color: var(--grey-color);
+  font-weight: bold;
+  font-size: large;
+}
+
+.student-info .info-btns {
+  padding: 5px;
 }
