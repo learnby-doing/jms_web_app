@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./logo/new.png" type="image/png" sizes="114x114" />
+    <script
+      src="https://kit.fontawesome.com/40655f7eee.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Cube Academy | Web Application</title>
+  </head>
+  <body>
+    <header class="header">
+      <ul class="header-content bg-dark">
+        <li>
+          <a href=""
+            ><span class="logo"
+              ><img class="logo" src="./logo/canew.png" alt="logo" /></span
+          ></a>
+        </li>
+        <ul class="header-page-items">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="">Students</a></li>
+          <li><a href="">Teachers</a></li>
+          <li><a href="">Contacts</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+        <ul class="contact-content">
+          <li>
+            <i class="fas fa-phone-square primary-color"></i
+            ><a class="style-link" href="">Contact Us</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope-square primary-color"></i
+            ><a href="" class="style-link">Email</a>
+          </li>
+        </ul>
+      </ul>
+    </header>
+    <main>
+      <div class="student-info__profile">
+        <div>
+          <img src="./Photo.jpg" alt="" srcset="" />
+        </div>
+        <div class="student-scoreboard">
+          <div class="skill">
+            <div class="inner">
+              <div id="number"></div>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="160px"
+                height="160px"
+              >
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#27ae60" />
+                    <stop offset="100%" stop-color="#d4ac0d" />
+                  </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="student-details-performance">
+          <button class="btn"><i class="fas fa-file-alt"></i> Docs</button>
+          <button class="btn">
+            <i class="fas fa-user-edit"></i> Edit Details
+          </button>
+          <button class="btn">
+            <i class="fas fa-receipt"></i> Payment Details
+          </button>
+          <button class="btn">
+            <i class="fas fa-flag-checkered"></i> Student Scoreboard
+          </button>
+        </div>
+      </div>
+      <h2>Student Details</h2>
+      <hr />
+      <div class="student-details-container">
+        <div class="student-details">
+          <div>
+            <div>
+              <label>Student Id : </label>
+              <p>1001</p>
+            </div>
+            <div>
+              <label>First Name : </label>
+              <p>Ashish</p>
+            </div>
+            <div>
+              <label>Last Name : </label>
+              <p>Dhamu</p>
+            </div>
+            <div>
+              <label>DOB : </label>
+              <p>05/05/1994</p>
+            </div>
+            <div>
+              <label>Gender : </label>
+              <p>Male</p>
+            </div>
+            <div>
+              <label>Category : </label>
+              <p>OBC</p>
+            </div>
+            <div>
+              <label>Father's Name : </label>
+              <p>Shanker Lal</p>
+            </div>
+            <div>
+              <label>Mother's Name : </label>
+              <p>Norangi Devi</p>
+            </div>
+            <div>
+              <label>Contact : </label>
+              <p>+91 9660912434</p>
+            </div>
+            <div>
+              <label>Class : </label>
+              <p>10th</p>
+            </div>
+            <div>
+              <label>Village : </label>
+              <p>Khara Kheda</p>
+            </div>
+            <div>
+              <label>Address : </label>
+              <p>4KHR Farm House Khara Khdeda</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+    </main>
+  </body>
+  <script src="student_info.js"></script>
+</html>

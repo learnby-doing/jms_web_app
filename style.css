@@ -18,16 +18,28 @@
   box-sizing: border-box;
   /* overflow: scroll; */
 }
+hr {
+  height: 2px;
+  border-width: 0;
+  color: var(--dark-color);
+  background-color: var(--dark-color);
+  opacity: 0.5;
+}
+h2 {
+  color: var(--primary-color);
+  margin: 20px;
+}
 
-img {
+/* img {
   border-radius: 5px;
   height: 50px;
-}
+} */
 
 body {
   font-family: var(--font-family);
   background: var(--light-color);
   padding-bottom: 30px;
+  overflow-y: scroll;
   /* padding: 30px 20px; */
 }
 li {
@@ -95,6 +107,8 @@ select option:hover {
 .logo {
   color: var(--primary-color);
   height: 50px !important;
+  /* padding: 4px; */
+  /* box-shadow: var(--box-shadow); */
   /* background: var(--dark-color); */
   border-radius: 5px;
   padding-left: 20px;
@@ -203,7 +217,7 @@ select option:hover {
   font-size: 20px;
 }
 
-main div i {
+.container div i {
   font-size: 50px;
   /* margin: auto; */
 }
@@ -295,9 +309,9 @@ option:focus {
   color: var(--grey-color);
   padding: 5px;
   border-radius: 5px;
-  width: auto;
+  width: max-content;
   font-size: 15px;
-  border: 1px solid var(--dark-color);
+  border: 1px solid var(--light-color);
   cursor: pointer;
 }
 .student-form-container button:hover,
@@ -310,15 +324,12 @@ option:focus {
 .btn:active {
   color: var(--dark-color);
 }
-.btn {
-  font-size: 12px;
-}
 @keyframes buttonhover {
   from {
   }
   to {
-    background: var(--grey-color);
-    color: var(--primary-color);
+    background: var(--light-color);
+    color: var(--grey-color);
     box-shadow: var(--box-shadow);
   }
 }
@@ -583,4 +594,117 @@ option:focus {
 
 .student-info .info-btns {
   padding: 5px;
+}
+.student-info__profile {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 5fr 5fr 5fr 5fr;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+.student-info__profile img {
+  height: 150px;
+  border-radius: 5px;
+}
+
+.student-details-container {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+}
+.student-details {
+  padding: 15px;
+  background: var(--light-color);
+}
+.student-details h2 {
+  color: var(--primary-color);
+  margin: 5px 0px;
+}
+
+.student-details div {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.student-details div div {
+  display: flex;
+  /* border: 2px solid var(--primary-color); */
+  border-radius: 5px;
+  width: max-content;
+  padding: 0px 2px;
+  margin: 10px;
+}
+.student-details div div label,
+.student-details div div p {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--grey-color);
+  width: auto;
+  padding: 2px;
+  margin: 5px 0px;
+  text-align: left;
+  width: 2 00px;
+}
+
+.student-details div div label {
+  color: var(--primary-color);
+  display: inline-block;
+  width: 200px;
+}
+/* .student-details div p {
+  text-align: right;
+} */
+
+.student-details-performance {
+  background: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.student-details-performance button {
+  font-size: 15px;
+  margin: 10px 0px;
+}
+
+.student-scoreboard {
+  padding: 20px;
+}
+
+.student-scoreboard .skill {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.student-scoreboard .inner {
+  height: auto;
+  width: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.student-scoreboard #number {
+  font-weight: 600;
+  color: #555;
+  display: flex;
+}
+.student-scoreboard circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: anim_progressbar 1s linear forwards;
+}
+@keyframes anim_progressbar {
+  100% {
+    stroke-dashoffset: 165;
+  }
+}
+.student-scoreboard svg {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
