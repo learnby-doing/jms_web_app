@@ -2,6 +2,20 @@
 
 :root {
   --primary-color: #27ae60;
+  --primary-dark-color: #2b9457;
+  --secondary-color: black;
+  --dark-color: #333;
+  --light-color: #444;
+  --grey-color: #ddd;
+  --rte-color: #2980b9;
+  --pending-color: #d4ac0d;
+  --pending-color: #d4ac0d;
+  --font-family: "Glory", sans-serif;
+  --box-shadow: #222 0px 8px 24px;
+}
+/* :root {
+  --primary-color: #27ae60;
+  --primary-dark-color: #2b9457;
   --secondary-color: black;
   --dark-color: #333;
   --light-color: #444;
@@ -10,7 +24,7 @@
   --rte-color: #2980b9;
   --font-family: "Glory", sans-serif;
   --box-shadow: #222 0px 8px 24px;
-}
+} */
 
 * {
   margin: 0px;
@@ -28,6 +42,7 @@ hr {
 h2 {
   color: var(--primary-color);
   margin: 20px;
+  font-family: var(--font-family);
 }
 
 /* img {
@@ -68,7 +83,18 @@ li a {
 }
 
 .primary-txt-color {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
+  background: transparent !important;
+  margin: 0 !important;
+}
+
+.secondary-txt-color {
+  color: var(--grey-color) !important;
+  background: transparent !important;
+  margin: 0 !important;
+  font-weight: bold !important;
+  opacity: 0.6 !important;
+  justify-self: left !important;
 }
 
 .bg-light {
@@ -328,7 +354,7 @@ option:focus {
   from {
   }
   to {
-    background: var(--light-color);
+    background: var(--primary-dark-color);
     color: var(--grey-color);
     box-shadow: var(--box-shadow);
   }
@@ -349,13 +375,16 @@ option:focus {
 
 .popup {
   position: fixed;
-  top: 20%;
-  left: 20%;
-  height: 350px;
-  width: 500px;
+  padding: 20px;
+  left: 30%;
+  top: 10%;
+  /* transform: translate(-50%, -40%); */
+  min-height: 400px;
+  min-width: 350px;
+  /* overflow-x: auto; */
   background: var(--dark-color);
   z-index: -10;
-  border-radius: 5px;
+  border-radius: 7px;
   color: var(--primary-color);
   /* padding: 25px 5px; */
   display: flex;
@@ -367,12 +396,44 @@ option:focus {
   opacity: 0;
 }
 
+/* .popup::after {
+  position: absolute;
+  content: "\00d7";
+  color: var(--grey-color);
+  font-size: 30px;
+  top: 0;
+  right: 0;
+  height: fit-content;
+  display: inline-block;
+  padding: 0 10px;
+} */
+
+.popup__animation {
+  animation: popupdisply 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes popupdisply {
+  0% {
+    min-height: 0px;
+  }
+  50% {
+    min-height: 200px;
+  }
+  100% {
+    min-height: 400px;
+  }
+}
+
 .popup .student__type {
   display: flex;
   align-items: center;
   /* justify-items: center; */
 
   margin: 0;
+}
+embed {
+  margin: 20px;
 }
 
 #student_type_regular,
@@ -407,16 +468,19 @@ option:focus {
   font-size: 14px;
   float: left;
 }
-.popup div input[type="text"] {
+.popup div input[type="text"],
+.popup div textarea {
   font-family: var(--font-family);
   background: var(--grey-color);
   color: var(--dark-color);
   outline: none;
+  font-weight: bold;
   border-radius: 5px;
   font-weight: bold;
   border: 2px solid var(--primary-color);
-  padding: 2px;
+  padding: 3px;
   margin: 10px 0px;
+  /* text-align: center; */
   width: 100px;
   font-size: 14px;
 }
@@ -438,10 +502,10 @@ option:focus {
   position: absolute;
   right: 0;
   top: 0;
-  margin: 0;
+  margin-right: 10px;
   height: 20px;
   width: 20px;
-  font-size: auto;
+  font-size: 30px;
   font-weight: bold;
   /* transform: translate(0%, -15%); */
   cursor: pointer;
@@ -557,15 +621,15 @@ option:focus {
 }
 
 .done {
-  border-top: 5px solid var(--primary-color);
+  border-top: 2px solid var(--primary-color);
 }
 
 .pending {
-  border-top: 5px solid var(--pending-color);
+  border-top: 2px solid var(--pending-color);
 }
 
 .rte {
-  border-top: 5px solid var(--rte-color);
+  border-top: 2px solid var(--rte-color);
 }
 
 /* .student-info img {
@@ -707,4 +771,105 @@ option:focus {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.popup .doc {
+  width: 300px;
+}
+
+.popup .doc {
+  display: flex;
+  padding: 5px 0;
+  /* justify-content: center; */
+  align-items: center;
+  justify-content: space-between;
+  /* flex-flow: column wrap; */
+  /* text-align: center; */
+  /* align-items: flex-end; */
+}
+.popup .doc p {
+  width: 100px;
+}
+.popup .doc button {
+  justify-self: right;
+  width: 100px;
+  /* height: max-content; */
+}
+
+.popup .row {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+}
+
+.popup .row div label {
+  background: transparent;
+  color: var(--grey-color);
+}
+
+.popup button {
+  margin: 15px;
+}
+
+#view_doc_popup {
+  border: 1px solid var(--primary-color);
+}
+#pymt_details_popup {
+  height: 400px;
+  width: auto;
+  overflow-x: auto;
+}
+.popup .new__payment {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.popup .new__payment button {
+  font-size: 13px;
+}
+
+.popup .new__payment p {
+  color: var(--pending-color);
+  background: none;
+  border: 1px solid var(--light-color);
+}
+
+.popup #pymt_details_popup > div {
+  height: auto;
+  width: 300px;
+  /* background: var(--dark-color); */
+  /* border-right: 1px solid var(--light-color); */
+  /* border-left: 1px solid var(--light-color); */
+  border-bottom: 1px solid var(--light-color);
+  /* box-shadow: var(--box-shadow); */
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.popup #pymt_details .paydeposit label {
+  color: var(--pending-color) !important;
+  background: transparent !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--light-color);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark-color);
 }

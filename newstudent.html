@@ -45,6 +45,7 @@
         <div class="student-form-container">
           <!-- <hr class="primary-txt-color" bg-dark /> -->
           <h2>Student Form</h2>
+          <hr>
           <div class="profile-photo bg-light">
             <p>
               <input
@@ -63,7 +64,9 @@
             </p>
             <p><img id="output" height="170" /></p>
           </div>
+          <hr>
           <div class="student-form">
+            
             <div>
               <label for="first_name">First Name: </label
               ><input type="text" id="first_name" placeholder="First Name" />
@@ -137,6 +140,11 @@
                 placeholder="Address"
               ></textarea>
             </div>
+            <div>
+              <label for="village">Upload Docs: <i class="fas fa-file-upload"></i></label
+              ><input type="file" id="village" placeholder="Village" />
+            </div>
+            
           </div>
           <div>
             <div>
@@ -186,9 +194,6 @@
               <label for="fee_pymt">Paid By: <i class="fas fa-user-alt"></i></i></label>
               <input type="text" name="" id="fee_pymt" />
             </div>
-            <!-- <div>
-              <p>Total Fee <span>12000</span></p>
-            </div> -->
           </div>
           <div>
             <button id="proceed_btn" class="btn">
